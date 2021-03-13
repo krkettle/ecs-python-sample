@@ -1,0 +1,25 @@
+{
+  "[python]": {
+    "editor.formatOnSave": true,          // 保存時にformatを実行する
+  },
+  "python.venvPath": "api/.venv",
+  "python.linting.enabled": true,         // lintを有効にする
+  "python.linting.pylintEnabled": false,  // linterにpylintを使用しない
+  "python.linting.flake8Enabled": true,   // linterにflake8を使用する
+  "python.linting.flake8Args": [
+    "--max-line-length=88",               // 1行の最大文字数を88文字にする
+    "--ignore=E203,W503,W504",            // E203,W503,W504を無視する
+  ],
+  "python.linting.mypyEnabled": true,     // mypyを有効にする
+  "python.linting.mypyArgs": [
+    "--strict",                           // 全てのエラーチェックを有効にする
+    "--disallow-untyped-defs",            // アノテーションされていない関数呼び出しを禁止する
+    "--ignore-missing-imports",           // type hintを提供していないライブラリを許す
+  ],
+  "python.linting.lintOnSave": true,      // 保存時にlintを実行する
+  "python.formatting.provider": "black",  // formatterにblackを使用する
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "88"                                  // 1行の最大文字数を88文字にする
+  ],
+}
