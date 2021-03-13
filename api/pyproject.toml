@@ -8,6 +8,7 @@ authors = ["krkettle <catrarazou@gmail.com>"]
 python = "^3.9"
 uvicorn = "^0.13.4"
 fastapi = "^0.63.0"
+boto3 = "^1.17.27"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
