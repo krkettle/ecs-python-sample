@@ -8,3 +8,4 @@ services:
     volumes: 
       - "./api:/usr/src/app"
     command: uvicorn src.main:app --reload --host 0.0.0.0
+    env_file: ./.env
