@@ -1,0 +1,11 @@
+version: "3.7"
+
+services: 
+  api:
+    x-aws-policies:
+      - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
