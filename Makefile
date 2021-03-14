@@ -14,19 +14,11 @@ ENV_SET := \
 	export COMPOSE_FILE=docker-compose.yml:docker-compose.$(ENV).yml; \
 	echo ENV is $(ENV);
 
-.PHONY:	setup
-setup:
-	@docker context create ecs ecscontext; \
-	aws s3 mb s3://docker-python-sample-bucket; \
-	curl http://worldtimeapi.org/api/timezone/Asia/Tokyo > sample.json; \
-	aws s3 cp sample.json s3://docker-python-sample-bucket/sample.json; \
-	rm sample.json;
-
-.PHONY:	build
-build:
+.PHONY:	rebuild
+rebuild:
 	@$(ENV_SET) \
 	$(DEV_CTX_CMD) \
-	docker-compose build --no-cache; \
+	docker-compose build --no-cache
 
 .PHONY:	push
 push:
